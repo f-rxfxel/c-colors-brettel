@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { brettelFunctions, ColorMatrixMatrixes } from './brettel.js'
+import { brettelFunctions } from './brettel.js'
 import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
@@ -38,10 +38,10 @@ function App() {
     },
 
     onresize: function () {
-      // Fill whole window canvas: http://stackoverflow.com/a/10215724/2256700
-      this.canvas.style.width = currentImage.naturalWidth
-      this.canvas.style.height = currentImage.naturalHeight
-      // ...then set the internal size to match
+      this.canvas.style.width = "370"
+      this.canvas.style.height = "655px"
+      // this.canvas.style.width = currentImage.naturalWidth
+      // this.canvas.style.height = currentImage.naturalHeight
       this.canvas.width = this.canvas.offsetWidth
       this.canvas.height = this.canvas.offsetHeight
       console.log(currentImage.naturalWidth)
@@ -283,18 +283,25 @@ function App() {
       </DropdownMenuContent>
     </DropdownMenu>
   )
-
-  return (
-    <main className='flex flex-col items-center  gap-5 mt-4'>
-      <SelectDaltonism />
-      {showOriginalImage && (
+  
+/* eslint-disable react/prop-types */ // TODO: upgrade to latest eslint tooling
+const AccessibleImage = ({ src }) => (
+  <div>
+        {showOriginalImage && (
         <img
           // className='hidden'
           ref={myImage}
-          src='/src/assets/imagem.png'
+          src={src}
           alt=''
         />
       )}
+  </div>
+)
+
+  return (
+    <main>
+      <SelectDaltonism />
+      <AccessibleImage src='/src/assets/imagem.png' />
       <canvas ref={outCanvas}>
         Your browser does not support the HTML5 canvas element.
       </canvas>

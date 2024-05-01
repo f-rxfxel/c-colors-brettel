@@ -1,7 +1,6 @@
 {
-  "name": "react-colorblind-simulation",
-  "private": true,
-  "version": "0.0.0",
+  "name": "c-colors-brettel",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -32,5 +31,23 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "conjunto de utilitários e componentes React para processamento de imagens, incluindo filtros de correção de daltonismo baseados no algoritmo de Brettel et al 1997",
+  "main": "src/App.jsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-rxfxel/ccolors.git"
+  },
+  "keywords": [
+    "daltonism",
+    "colorblind",
+    "brettel",
+    "react"
+  ],
+  "author": "Francisco Porfirio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-rxfxel/ccolors/issues"
+  },
+  "homepage": "https://github.com/f-rxfxel/ccolors#readme"
 }
