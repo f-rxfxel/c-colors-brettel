@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 
-function App() {
+function FilteredImage() {
   const [colorblindType, setColorblindType] = useState('Normal')
   const [imageCache, setImageCache] = useState({})
   const [urlCache, setUrlCache] = useState({})
@@ -309,4 +309,4 @@ const AccessibleImage = ({ src }) => (
   )
 }
 
-export default App
+export default FilteredImage
