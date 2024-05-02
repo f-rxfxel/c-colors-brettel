@@ -33,7 +33,7 @@
     "vite": "^5.2.0"
   },
   "description": "conjunto de utilitários e componentes React para processamento de imagens, incluindo filtros de correção de daltonismo baseados no algoritmo de Brettel et al 1997",
-  "main": "src/App.jsx",
+  "main": "/src/App.jsx",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/f-rxfxel/ccolors.git"
