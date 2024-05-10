@@ -5,7 +5,7 @@ c-colors é uma biblioteca que fornece utilitários e componentes para processam
 
 ## Instalação
 
-Para instalar a biblioteca, você pode usar o npm ou o yarn:
+Para instalar a biblioteca, você pode usar o npm:
 
 ```bash
 npm install c-colors
@@ -13,17 +13,29 @@ npm install c-colors
 
 ## Uso
 
+A biblioteca fornece dois componentes: 
+```<SelectDaltonism />```
+e
+```<ColorBlindImage />```
+
+O componente ```<SelectDaltonism />```, opcionalmente espera propriedades de estilização em Tailwind. Caso estas propriedades existam, o estilo default do componente é substituído.
+Este componente expande um menu ao ser clicado, exibindo os tipos disponíveis de daltonismo.
+
+O componente ```<ColorBlindImage />```, obrigatoriamente espera propriedades de uma tag HTML do tipo ```<img />```, ou seja, src (caminho da imagem) e alt (texto alternativo).
+Este componente, por debaixo dos panos, reescreve a imagem pixel a pixel, aplicando uma correção aos valores RGB de cada pixel.
+
 Aqui está um exemplo básico de como usar os filtros de correção de daltonismo em um componente React:
 
 ```jsx
 import React from 'react';
-import { ColorBlindImage } from 'react-image-processing';
+import { ColorBlindImage } from 'c-colors-brettel';
 
 const MyComponent = () => {
   return (
-    <div>
-      <h1>Minha Imagem</h1>
-      <ColorBlindImage src="minha-imagem.jpg" type="Protanopia" />
+    <div className='flex flex-col gap-4 items-center'>
+      <SelectDaltonism />
+      <h1>Paisagem de uma floresta:</h1>
+      <ColorBlindImage src="imagem-floresta.jpg" alt="Imagem de uma floresta" />
     </div>
   );
 }
