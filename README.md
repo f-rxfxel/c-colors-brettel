@@ -1,48 +1,22 @@
-```markdown
-# c-colors
-
-c-colors é uma biblioteca que fornece utilitários e componentes para processamento de imagens em aplicativos React. Ele inclui filtros de correção de daltonismo baseados no algoritmo de Brettel, permitindo que os desenvolvedores criem aplicativos acessíveis para pessoas com diferentes tipos de daltonismo.
-
-## Instalação
-
-Para instalar a biblioteca, você pode usar o npm:
-
-```bash
-npm install c-colors
-```
-
 ## Uso
 
-A biblioteca fornece dois componentes: 
-```<SelectDaltonism />```
-e
-```<ColorBlindImage />```
+A biblioteca fornece o componente: 
+```<BrettelImage />```
 
-O componente ```<SelectDaltonism />```, opcionalmente espera propriedades de estilização em Tailwind. Caso estas propriedades existam, o estilo default do componente é substituído.
-Este componente expande um menu ao ser clicado, exibindo os tipos disponíveis de daltonismo.
+O componente ```<SelectDaltonism />``` espera as propriedades dos tipos de daltonismo (```Normal```, ```Deuteranopia```, ```Protanopia```, ```Tritanopia```, ```Deuteranomalia```, ```Protanomalia``` ou ```Tritanomalia```) por meio da prop ```colorblindType```, o caminho da imagem por meio da prop ```src```, o texto alternativo por meio da prop ```alt```.
 
-O componente ```<ColorBlindImage />```, obrigatoriamente espera propriedades de uma tag HTML do tipo ```<img />```, ou seja, src (caminho da imagem) e alt (texto alternativo).
-Este componente, por debaixo dos panos, reescreve a imagem pixel a pixel, aplicando uma correção aos valores RGB de cada pixel.
+O componente ```<SelectDaltonism />```, por debaixo dos panos, utiliza a tag ```<img />``` juntamente com o ```<canvas></canvas>``` do HTML para reescrever a imagem pixel a pixel, aplicando uma correção aos valores RGB, usando JavaScript.
+
+Os valores, parâmetros e funçõesde conversão descritos no artigo por Brettel, H., Vienot, F. & Mollon, J. D. (1997) são necessários para a correção de imagem, e graças ao [MaPePeR](https://github.com/MaPePeR), não tive o trabalho de reescreve-los. Reitero também sua solução também usada nesta biblioteca de dividir a imagem em blocos para melhorar a performance da aplicação.
 
 Aqui está um exemplo básico de como usar os filtros de correção de daltonismo em um componente React:
 
 ```jsx
-import React from 'react';
-import { ColorBlindImage } from 'c-colors-brettel';
+import { BrettelImage } from 'c-colors';
 
-const MyComponent = () => {
-  return (
-    <div className='flex flex-col gap-4 items-center'>
-      <SelectDaltonism />
-      <h1>Paisagem de uma floresta:</h1>
-      <ColorBlindImage src="imagem-floresta.jpg" alt="Imagem de uma floresta" />
-    </div>
-  );
-}
-
-export default MyComponent;
+<BrettelImage
+  colorblindType="Deuteranopia"
+  src="/my-image.jpg"
+  alt="A beautiful landscape"
+/>
 ```
-
-## Contribuição
-
-Se você quiser contribuir para este projeto, sinta-se à vontade para abrir problemas ou enviar solicitações de recebimento no [GitHub](https://github.com/f-rxfxel/ccolors).
