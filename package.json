@@ -1,6 +1,6 @@
 {
   "name": "c-colors-brettel",
-  "version": "0.2.0",
+  "version": "0.2.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -33,7 +33,7 @@
     "vite": "^5.2.0"
   },
   "description": "conjunto de utilitários e componentes React para processamento de imagens, incluindo filtros de correção de daltonismo baseados no algoritmo de Brettel et al 1997",
-  "main": "/src/components/BrettelImage.jsx",
+  "main": "src/components/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/f-rxfxel/ccolors.git"

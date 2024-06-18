@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { BrettelImage } from './components/BrettelImage'
 import Menu from './components/Menu'
+import { BrettelImage } from './components'
 
 const App = () => {
   const [daltonismo, setDaltonismo] = useState('Normal')

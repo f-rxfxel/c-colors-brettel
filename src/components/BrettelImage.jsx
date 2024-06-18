@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { brettelFunctions } from '../utils/brettel'
 
 // eslint-disable-next-line no-unused-vars
@@ -12,15 +12,11 @@ const colorblindTypes = [
   'Tritanomaly',
 ]
 
-export function BrettelImage({
-  colorblindType,
+export default function BrettelImage({
+  colorblindType = 'Normal',
   src = '/src/img.jpeg',
   alt = 'Alternative text for screen readers',
 }) {
-  if (!colorblindTypes.includes(colorblindType)) {
-    console.log('nao tem')
-  }
-
   const [imageCache, setImageCache] = useState({})
   const [urlCache, setUrlCache] = useState({})
   const [showOriginalImage, setShowOriginalImage] = useState(true)
