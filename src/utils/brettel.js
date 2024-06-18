@@ -65,9 +65,9 @@ function brettel(srgb, t, severity) {
   rgb[2] = sRGB_to_linearRGB_Lookup[srgb[2]];
 
   var params = brettel_params[t];
-  var separationPlaneNormal = params["separationPlaneNormal"];
-  var rgbCvdFromRgb_1 = params["rgbCvdFromRgb_1"];
-  var rgbCvdFromRgb_2 = params["rgbCvdFromRgb_2"];
+  var separationPlaneNormal = params['separationPlaneNormal'];
+  var rgbCvdFromRgb_1 = params['rgbCvdFromRgb_1'];
+  var rgbCvdFromRgb_2 = params['rgbCvdFromRgb_2'];
 
   // Check on which plane we should project by comparing wih the separation plane normal.
   var dotWithSepPlane =
@@ -111,22 +111,22 @@ const brettelFunctions = {
     return v;
   },
   Protanopia: function (v) {
-    return brettel(v, "protan", 1.0);
+    return brettel(v, 'protan', 1.0);
   },
   Protanomaly: function (v) {
-    return brettel(v, "protan", 0.6);
+    return brettel(v, 'protan', 0.6);
   },
   Deuteranopia: function (v) {
-    return brettel(v, "deutan", 1.0);
+    return brettel(v, 'deutan', 1.0);
   },
   Deuteranomaly: function (v) {
-    return brettel(v, "deutan", 0.6);
+    return brettel(v, 'deutan', 0.6);
   },
   Tritanopia: function (v) {
-    return brettel(v, "tritan", 1.0);
+    return brettel(v, 'tritan', 1.0);
   },
   Tritanomaly: function (v) {
-    return brettel(v, "tritan", 0.6);
+    return brettel(v, 'tritan', 0.6);
   },
 };
 
