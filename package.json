@@ -1,11 +1,10 @@
 {
   "name": "c-colors-brettel",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -36,7 +35,7 @@
   "main": "src/components/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/f-rxfxel/ccolors.git"
+    "url": "git+https://github.com/f-rxfxel/c-colors-brettel.git"
   },
   "keywords": [
     "daltonism",
@@ -47,7 +46,7 @@
   "author": "Francisco Porfirio",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/f-rxfxel/ccolors/issues"
+    "url": "https://github.com/f-rxfxel/c-colors-brettel/issues"
   },
-  "homepage": "https://github.com/f-rxfxel/ccolors#readme"
+  "homepage": "https://github.com/f-rxfxel/c-colors-brettel#readme"
 }

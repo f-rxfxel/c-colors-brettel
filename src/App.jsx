@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <Menu onChange={(dalt) => setDaltonismo(dalt)}/>
-      <BrettelImage colorblindType={daltonismo}/>
+      <BrettelImage colorblindType={daltonismo} />
     </div>
   )
 }
